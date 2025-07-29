@@ -22,7 +22,6 @@ class IOSParams {
   final bool? supportsHolding;
   final bool? supportsGrouping;
   final bool? supportsUngrouping;
-  final bool? includesCallsInRecents;
 
   /// Add file to root project xcode /ios/Runner/Ringtone.caf and Copy Bundle Resources(Build Phases) -> value: "Ringtone.caf"
   final String? ringtonePath;
@@ -42,7 +41,6 @@ class IOSParams {
     this.supportsHolding,
     this.supportsGrouping,
     this.supportsUngrouping,
-    this.includesCallsInRecents,
     this.ringtonePath,
   });
 

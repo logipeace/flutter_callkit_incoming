@@ -17,7 +17,7 @@
             android:layout_height="@dimen/base_margin_x4"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_default_avatar"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="@dimen/base_margin_half"
@@ -27,6 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
@@ -45,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:maxLines="1"
+                android:visibility="gone"
                 android:textAppearance="@style/TextAppearance.Compat.Notification.Line2"
                 android:textSize="@dimen/size_text_action" />
 

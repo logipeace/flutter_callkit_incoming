@@ -135,6 +135,7 @@ public class Call: NSObject {
     @objc public var type: Int
     @objc public var normalHandle: Int
     @objc public var duration: Int
+    @objc public var isAccepted: Bool
     @objc public var extra: NSDictionary
     
     //iOS
@@ -164,6 +165,7 @@ public class Call: NSObject {
         self.type = type
         self.normalHandle = 0
         self.duration = 30000
+        self.isAccepted = false
         self.extra = [:]
         self.iconName = "CallKitLogo"
         self.handleType = ""
@@ -174,7 +176,7 @@ public class Call: NSObject {
         self.supportsHolding = true
         self.supportsGrouping = true
         self.supportsUngrouping = true
-        self.includesCallsInRecents = false
+        self.includesCallsInRecents = true
         self.ringtonePath = ""
         self.configureAudioSession = true
         self.audioSessionMode = ""
@@ -200,6 +202,7 @@ public class Call: NSObject {
         self.type = args["type"] as? Int ?? 0
         self.normalHandle = args["normalHandle"] as? Int ?? 0
         self.duration = args["duration"] as? Int ?? 30000
+        self.isAccepted = args["isAccepted"] as? Bool ?? false
         self.extra = args["extra"] as? NSDictionary ?? [:]
         
         
@@ -213,7 +216,7 @@ public class Call: NSObject {
             self.supportsHolding = ios["supportsHolding"] as? Bool ?? true
             self.supportsGrouping = ios["supportsGrouping"] as? Bool ?? true
             self.supportsUngrouping = ios["supportsUngrouping"] as? Bool ?? true
-            self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? false
+            self.includesCallsInRecents = ios["includesCallsInRecents"] as? Bool ?? true
             self.ringtonePath = ios["ringtonePath"] as? String ?? ""
             self.configureAudioSession = ios["configureAudioSession"] as? Bool ?? true
             self.audioSessionMode = ios["audioSessionMode"] as? String ?? ""
@@ -230,7 +233,7 @@ public class Call: NSObject {
             self.supportsHolding = args["supportsHolding"] as? Bool ?? true
             self.supportsGrouping = args["supportsGrouping"] as? Bool ?? true
             self.supportsUngrouping = args["supportsUngrouping"] as? Bool ?? true
-            self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? false
+            self.includesCallsInRecents = args["includesCallsInRecents"] as? Bool ?? true
             self.ringtonePath = args["ringtonePath"] as? String ?? ""
             self.configureAudioSession = args["configureAudioSession"] as? Bool ?? true
             self.audioSessionMode = args["audioSessionMode"] as? String ?? ""
@@ -269,6 +272,7 @@ public class Call: NSObject {
             "type": type,
             "normalHandle": normalHandle,
             "duration": duration,
+            "isAccepted": isAccepted,
             "extra": extra,
             "ios": ios
         ]

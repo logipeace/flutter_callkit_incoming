@@ -23,7 +23,6 @@ IOSParams _$IOSParamsFromJson(Map<String, dynamic> json) => IOSParams(
       supportsHolding: json['supportsHolding'] as bool?,
       supportsGrouping: json['supportsGrouping'] as bool?,
       supportsUngrouping: json['supportsUngrouping'] as bool?,
-      includesCallsInRecents: json['includesCallsInRecents'] as bool?,
       ringtonePath: json['ringtonePath'] as String?,
     );
 
@@ -44,6 +43,5 @@ Map<String, dynamic> _$IOSParamsToJson(IOSParams instance) => <String, dynamic>{
       'supportsHolding': instance.supportsHolding,
       'supportsGrouping': instance.supportsGrouping,
       'supportsUngrouping': instance.supportsUngrouping,
-      'includesCallsInRecents': instance.includesCallsInRecents,
       'ringtonePath': instance.ringtonePath,
     };
